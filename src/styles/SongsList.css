@@ -1,0 +1,82 @@
+.songs-name {
+    color: #808080;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 1.5rem;
+}
+
+
+.table-style {
+    border-collapse:collapse;
+    border-radius: 1rem;
+    width:100%;
+}
+
+.popular-heading {
+    color: #FFF;
+    font-style:inherit;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 1%;
+}
+
+.play {
+    border-radius: 8px;
+    background: #FF8202;
+    outline: none;
+    border:0;
+    height: 1.5rem;
+    width: 3.5rem;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+}
+
+.play {
+    color: #000;
+    text-align: right;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.tr-style {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 3rem;
+}
+
+
+.columns {
+    height: 3rem;
+    border: none;
+    border-color:white;
+}
+
+.columns:hover {
+    background: #1A1A1A; 
+    cursor: pointer; 
+    border-radius: 3rem;
+    
+}
+
+.songs-image {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+
+

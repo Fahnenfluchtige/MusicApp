@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding:1rem;
+}
+
+.bell-icon {
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;
+    color: #BFBFBF;
+    margin-right: 1%;
+}
+
+.personal-area {
+    width: 170rem;
+    height: 4rem;
+    align-items:center;
+    display:flex;
+    border-radius: 40px;
+    background: #262626; 
+    text-align: center;
+}
+
+.image {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0; 
+    color: #BFBFBF;
+    border-radius: 32px; 
+    align-self: center;
+    margin-left: 12px;
+}
+
+.information {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column; 
+    align-content: first baseline;
+    text-align: left;
+}
+
+.information-name {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    min-width: 10rem;
+    overflow: hidden;  
+    text-overflow: ellipsis; 
+}
+
+.information-type {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
