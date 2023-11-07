@@ -1,115 +1,110 @@
-
 .album-container {
-    position: relative;
-    padding: 1.5rem;
+  position: relative;
+  padding: 15px;
+}
 
-
-  }
-  .album-picture {
-    width: 100%;
-    background-size: cover; 
-    background-position: center; 
-    position: relative;
-    flex-direction: column; 
-    border-radius: 30px;
-    }
+.album-picture {
+  background-image: url("https://post-punk.com/wp-content/uploads/2023/08/Death-Cult-official-Publicity-Photo063crop.jpg");
+  width: 99%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-direction: column;
+  border-radius: 30px;
+}
 
 .album-picture::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
-  width: 45%; 
+  width: 45%;
   height: 100%;
   border-radius: 30px;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
-  z-index: 0;
-  }
+}
 
 .album-picture::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 50%;
   height: 100%;
-  border-radius: 0 30px 30px 0; 
+  border-radius: 0 30px 30px 0;
   background: linear-gradient(to left, rgba(0, 0, 0.7, 0.9), transparent);
-  z-index: 0;
 }
-
 
 .info {
   position: relative;
   width: 100%;
-  height: 90;
   display: flex;
-  justify-content: space-between; 
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 15px;
 }
 
 .statistics {
   flex-direction: column;
-  align-self: flex-end; 
-  bottom:0;
+  align-self: flex-end;
+  bottom: 0;
 }
 
 .about {
   width: 20%;
-  padding:3rem; 
+  padding: 35px;
   max-height: 15rem;
   align-self: flex-end;
   z-index: 1;
 }
 
 .about-text {
-  color: #FFF;
+  color: #fff;
   font-family: Montserrat;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 160%;
-  overflow: hidden;  
+  overflow: hidden;
   text-overflow: ellipsis;
   max-height: 15rem;
 }
 
 .about-text-mini {
-  color: #FFF;
+  color: #fff;
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  margin-top:1rem;
   line-height: 160%;
 }
-  .verified-style {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-  }
 
-  .verified-icon {
-    color: #FF8202;
-    margin-right: 0.7em;
-  }
-  .artist-name {
-    color: #FFF;
-    font-family: Ubuntu;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 160%;
-  }
+.verified-div {
+  display: flex;
+}
+.verified-style {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+}
 
-  .listeners {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 160%; 
-  }
+.verified-icon {
+  color: #ff8202;
+  margin-right: 3px;
+}
 
+.artist-name {
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+}
 
-
-  
+.listeners {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}

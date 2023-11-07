@@ -19,32 +19,23 @@ const info: About[] = [
 const Main: React.FC = () => {
   return (
     <div className="album-container">
-    <div
-      className="album-picture"
-      style={{
-        backgroundImage:
-          "url('https://post-punk.com/wp-content/uploads/2023/08/Death-Cult-official-Publicity-Photo063crop.jpg')",
-      }}
-    >
+    <div className="album-picture">
       <div className="info" >
         <div className='statistics'>
-          {info[0].is_verified && <div style={{display: 'flex'}}>
+            <h1 className='artist-name'>{info[0].artist}</h1>
+            {info[0].is_verified && <div className='verified-div'>
             <MdVerified className='verified-icon'/>
-            <div className="verified-style">Verified Artist</div> 
+            <div className="verified-style">Verified Artist</div>
             </div>}
-          <div className='artist-name'>{info[0].artist}</div>
-          <div className='listeners'>{info[0].listeners} listeners</div>
-          
+            <p className='listeners'>{info[0].listeners} listeners</p>
+
         </div>
         <div className='about'>
           <p className='about-text'>{info[0].about}
           </p>
           <div className='about-text-mini'>About...</div>
         </div>
-        
-        
       </div>
-      
     </div>
   </div>
   )

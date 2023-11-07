@@ -1,0 +1,31 @@
+.player-elements {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  
+  .picture {
+    width: 50px;
+    height: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  
+  .song-title {
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .song-author {
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }

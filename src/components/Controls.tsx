@@ -1,19 +1,19 @@
-
 import { useRef, useState, useEffect, useMemo } from "react";
-import {AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
-import svgComponents from "../svgs/svgs";
-import '../styles/Controls.css'
+import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
+import svgComponents from "../assets/svgs/svgs";
+import "../styles/Controls.css";
 
 type Props = {
-  playerRef: any;
+  // eslint-disable-next-line
+  
   playing: boolean;
   loop: boolean;
   progress: number;
   handlePlay: () => void;
   toggleLoop: () => void;
   handlePause: () => void;
-  nextSong: () =>  void;
-  prevSong: () =>  void;
+  nextSong: () => void;
+  prevSong: () => void;
   playSong: (index: number) => void;
 };
 export const Controls = ({
@@ -21,13 +21,12 @@ export const Controls = ({
   progress,
   handlePlay,
   toggleLoop,
-  handlePause, 
+  handlePause,
   prevSong,
   nextSong,
-  playSong
 }: Props) => {
-  const [played, setPlayed] = useState<number>(0);
-  const [seeking, setSeeking] = useState<boolean>(false);
+  const [, setPlayed] = useState<number>(0);
+  const [seeking, ] = useState<boolean>(false);
   const playPauseButtonRef = useRef<HTMLButtonElement>(null);
 
   const togglePlayAndPause = () => {
@@ -38,7 +37,7 @@ export const Controls = ({
     }
   };
 
-   useMemo(() => {
+  useMemo(() => {
     setPlayed((prevPlayed) => {
       if (!seeking && prevPlayed !== progress) {
         return progress;
@@ -47,40 +46,32 @@ export const Controls = ({
     });
   }, [progress, seeking]);
 
-
   useEffect(() => {
     playPauseButtonRef.current?.focus();
   }, []);
-  
-  return (
- <div className="controls-area">
-  <button><img src={svgComponents.shuffle} /></button>
-    <button
-    onClick={() => prevSong()}
-    >
-      <img src={svgComponents.backward} />
-    </button>
-     <button
-       ref={playPauseButtonRef}
-       className=""
-       onClick={togglePlayAndPause}
-     >
-       {playing ? <AiFillPauseCircle style={{color:'white'}} size = "3rem" />: <AiFillPlayCircle style={{color:'white'}} size = "3rem" />}
-       </button>
-      
-      
-        <button
-        onClick={nextSong}
-        ><img src={svgComponents.forward} /></button>
-        <button
-          className={''}
-          onClick={toggleLoop}
-        >
-       <img src={svgComponents.repeat} />
-     </button>
-    
-   
- </div>
 
+  return (
+    <div className="controls-area">
+      <button>
+        <img src={svgComponents.shuffle} />
+      </button>
+      <button onClick={() => prevSong()}>
+        <img src={svgComponents.backward} />
+      </button>
+      <button ref={playPauseButtonRef} onClick={togglePlayAndPause}>
+        {playing ? (
+          <AiFillPauseCircle className="button-icon" />
+        ) : (
+          <AiFillPlayCircle className="button-icon" />
+        )}
+      </button>
+
+      <button onClick={nextSong}>
+        <img src={svgComponents.forward} />
+      </button>
+      <button className={""} onClick={toggleLoop}>
+        <img src={svgComponents.repeat} />
+      </button>
+    </div>
   );
 };
