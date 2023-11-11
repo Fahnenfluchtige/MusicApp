@@ -20,7 +20,7 @@
   }
   
   .duration::-webkit-slider-runnable-track {
-    width: 90%;
+    width: 100%;
     -webkit-appearance: none;
     position: relative;
     height: 8px;
@@ -61,8 +61,14 @@
   }
   
   .duration::-webkit-progress-value {
-    height: 8px;
+    
     background-color: #ff8202;
+    
+    border-radius: 8px;
+  }
+  .duration::-webkit-progress-bar {
+    
+    background-color:  #ff8202;
     border-radius: 8px;
   }
   
@@ -72,4 +78,6 @@
     font-weight: bold;
     color: #fff;
   }
+  
+
   

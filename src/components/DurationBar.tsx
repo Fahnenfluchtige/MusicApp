@@ -16,7 +16,7 @@ export const DurationBar = ({ playerRef, progress, duration }: Props) => {
   const playPauseButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleSeekMouseDown = () => {
-    setSeeking(true);
+    //setSeeking(true);
   };
 
   const handleSeekChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,9 +28,6 @@ export const DurationBar = ({ playerRef, progress, duration }: Props) => {
     setSeeking(false);
   };
   
-  
-  
-
   useMemo(() => {
     setPlayed((prevPlayed) => {
       if (!seeking && prevPlayed !== progress) {

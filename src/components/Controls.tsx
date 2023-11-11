@@ -11,16 +11,18 @@ type Props = {
   progress: number;
   handlePlay: () => void;
   toggleLoop: () => void;
+  shuffle: () => void;
   handlePause: () => void;
   nextSong: () => void;
   prevSong: () => void;
   playSong: (index: number) => void;
 };
-export const Controls = ({
+const Controls = ({
   playing,
   progress,
   handlePlay,
   toggleLoop,
+  shuffle,
   handlePause,
   prevSong,
   nextSong,
@@ -52,7 +54,7 @@ export const Controls = ({
 
   return (
     <div className="controls-area">
-      <button>
+      <button onClick={toggleLoop}>
         <img src={svgComponents.shuffle} />
       </button>
       <button onClick={() => prevSong()}>
@@ -69,9 +71,11 @@ export const Controls = ({
       <button onClick={nextSong}>
         <img src={svgComponents.forward} />
       </button>
-      <button className={""} onClick={toggleLoop}>
+      <button onClick={shuffle}>
         <img src={svgComponents.repeat} />
       </button>
     </div>
   );
 };
+
+export default Controls

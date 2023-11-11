@@ -1,14 +1,13 @@
 import ReactPlayer, { ReactPlayerProps } from "react-player";
 import { SetStateAction, useRef, useState } from "react";
 import Details from "./Details";
-import { Controls } from "./Controls";
+import Controls from "./Controls";
 import { songs } from "../music/data";
 import SongsList from "./SongsList";
 import DurationBar from "./DurationBar";
 import "../styles/Player.css";
 
-
-export const Player = () => {
+ const Player = () => {
   const playerRef = useRef<ReactPlayer | null>(null);
   const [playing, setPlaying] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
@@ -34,6 +33,13 @@ export const Player = () => {
 
   const toggleLoop = () => {
     setLoop((prevLoop) => !prevLoop);
+    handlePlay();
+  };
+
+  const shuffle = () => {
+    const newIndex = Math.floor(Math.random() * songs.length);
+    setCurrentSongIndex(newIndex);
+    handlePlay();
   };
 
   const nextSong = () => {
@@ -75,6 +81,7 @@ export const Player = () => {
             loop={loop}
             handlePlay={handlePlay}
             toggleLoop={toggleLoop}
+            shuffle={shuffle}
             handlePause={handlePause}
             nextSong={nextSong}
             prevSong={prevSong}
@@ -108,3 +115,4 @@ export const Player = () => {
     </div>
   );
 };
+export default Player;

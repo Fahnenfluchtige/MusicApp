@@ -1,7 +1,7 @@
 import "../styles/Duration.css";
 export const Duration = ({ seconds }: { seconds: number }) => {
   return (
-    <time className="time" dateTime={`P${Math.round(seconds)}S`}>
+    <time className="time">
       {formatTime(seconds)}
     </time>
   );
