@@ -1,23 +1,19 @@
 import "../styles/Duration.css";
 export const Duration = ({ seconds }: { seconds: number }) => {
-  return (
-    <time className="time">
-      {formatTime(seconds)}
-    </time>
-  );
+  return <div className="time">{formatTime(seconds)}</div>;
 };
 
 const formatTime = (seconds: number) => {
   const date = new Date(seconds * 1000);
-  const hh = date.getUTCHours();
-  const mm = date.getUTCMinutes();
-  const ss = padString(date.getUTCSeconds());
-  if (hh) {
-    return `${hh}:${padString(mm)}:${ss}`;
+  const hh = String(date.getUTCHours()).padStart(2, '0');
+  const mm = String(date.getUTCMinutes()).padStart(2, '0');
+  const ss = String(date.getUTCSeconds()).padStart(2, '0');
+  if (hh !== '00') {
+    return `${hh}:${mm}:${ss}`;
   }
-  return `${mm}:${ss}`;
+  else {
+    return `${mm}:${ss}`;
+  }
+  
 };
 
-const padString = (string: number) => {
-  return ("0" + string).slice(-2);
-};

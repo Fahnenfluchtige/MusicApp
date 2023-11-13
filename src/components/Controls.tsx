@@ -6,47 +6,37 @@ import "../styles/Controls.css";
 type Props = {
   // eslint-disable-next-line
   
-  playing: boolean;
+  isPlaying: boolean;
   loop: boolean;
   progress: number;
   handlePlay: () => void;
   toggleLoop: () => void;
-  shuffle: () => void;
+  toggleShuffle: () => void;
   handlePause: () => void;
-  nextSong: () => void;
-  prevSong: () => void;
+  onPlayNextSong: () => void;
+  onPlayPrevSong: () => void;
   playSong: (index: number) => void;
 };
 const Controls = ({
-  playing,
-  progress,
+  isPlaying,
   handlePlay,
   toggleLoop,
-  shuffle,
+  toggleShuffle,
   handlePause,
-  prevSong,
-  nextSong,
+  onPlayPrevSong,
+  onPlayNextSong,
 }: Props) => {
-  const [, setPlayed] = useState<number>(0);
-  const [seeking, ] = useState<boolean>(false);
+
   const playPauseButtonRef = useRef<HTMLButtonElement>(null);
 
   const togglePlayAndPause = () => {
-    if (playing) {
+    if (isPlaying) {
       handlePause();
     } else {
       handlePlay();
     }
   };
 
-  useMemo(() => {
-    setPlayed((prevPlayed) => {
-      if (!seeking && prevPlayed !== progress) {
-        return progress;
-      }
-      return prevPlayed;
-    });
-  }, [progress, seeking]);
 
   useEffect(() => {
     playPauseButtonRef.current?.focus();
@@ -55,24 +45,24 @@ const Controls = ({
   return (
     <div className="controls-area">
       <button onClick={toggleLoop}>
-        <img src={svgComponents.shuffle} />
+        <img src={svgComponents.repeat} />
       </button>
-      <button onClick={() => prevSong()}>
+      <button onClick={onPlayPrevSong}>
         <img src={svgComponents.backward} />
       </button>
       <button ref={playPauseButtonRef} onClick={togglePlayAndPause}>
-        {playing ? (
+        {isPlaying ? (
           <AiFillPauseCircle className="button-icon" />
         ) : (
           <AiFillPlayCircle className="button-icon" />
         )}
       </button>
 
-      <button onClick={nextSong}>
+      <button onClick={onPlayNextSong}>
         <img src={svgComponents.forward} />
       </button>
-      <button onClick={shuffle}>
-        <img src={svgComponents.repeat} />
+      <button onClick={toggleShuffle}>
+        <img src={svgComponents.shuffle} />
       </button>
     </div>
   );

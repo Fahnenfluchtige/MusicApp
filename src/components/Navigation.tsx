@@ -1,8 +1,6 @@
-
 import { AiFillBell } from "react-icons/ai";
 import "../styles/Navigation.css";
 import Searchbar from "./Searchbar";
-
 
 const myArea = {
   name: "somename",
@@ -13,7 +11,7 @@ const Navigation = () => {
   return (
     <nav className="navbar">
       <Searchbar />
-      <menu className="area-menu">
+      <div className="area-menu">
         <AiFillBell className="bell-icon" />
         <div className="personal-area">
           <img
@@ -25,7 +23,7 @@ const Navigation = () => {
             <div className="information-type">{myArea.type}</div>
           </div>
         </div>
-      </menu>
+      </div>
     </nav>
   );
 };

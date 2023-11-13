@@ -1,22 +1,23 @@
-import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import ReactPlayer from "react-player";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Duration } from "./Duration";
 import "../styles/Duration.css";
-import ReactPlayer from "react-player";
 
 type Props = {
-  playerRef:  React.RefObject<ReactPlayer>;
+  playerRef: React.RefObject<ReactPlayer>;
   playing: boolean;
   loop: boolean;
   progress: number;
   duration: number;
 };
+
 export const DurationBar = ({ playerRef, progress, duration }: Props) => {
   const [played, setPlayed] = useState<number>(0);
   const [seeking, setSeeking] = useState<boolean>(false);
   const playPauseButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleSeekMouseDown = () => {
-    //setSeeking(true);
+    setSeeking(true);
   };
 
   const handleSeekChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,17 +25,14 @@ export const DurationBar = ({ playerRef, progress, duration }: Props) => {
   };
 
   const handleSeekMouseUp: React.MouseEventHandler<HTMLInputElement> = (e) => {
-    playerRef!.current?.seekTo(parseFloat((e.target as HTMLInputElement).value));
+    playerRef!.current?.seekTo(
+      parseFloat((e.target as HTMLInputElement).value)
+    );
     setSeeking(false);
   };
-  
-  useMemo(() => {
-    setPlayed((prevPlayed) => {
-      if (!seeking && prevPlayed !== progress) {
-        return progress;
-      }
-      return prevPlayed;
-    });
+
+  useEffect (() => {
+    if (!seeking) { setPlayed(progress); }
   }, [progress, seeking]);
 
   useEffect(() => {
@@ -43,7 +41,9 @@ export const DurationBar = ({ playerRef, progress, duration }: Props) => {
 
   return (
     <div className="durationbar">
-      <div>{<Duration seconds={duration * played} />}</div>
+      <div>
+        <Duration seconds={duration * played} />
+      </div>
       <input
         className="duration"
         type="range"
@@ -56,7 +56,7 @@ export const DurationBar = ({ playerRef, progress, duration }: Props) => {
         onMouseUp={handleSeekMouseUp}
       />
       <div className="time">
-        -{<Duration seconds={duration * (1 - played)} />}
+        -<Duration seconds={duration * (1 - played)} />
       </div>
     </div>
   );

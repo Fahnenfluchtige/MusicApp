@@ -1,9 +1,7 @@
 .controls-area {
   display: flex;
   align-items: center;
-  /*justify-content: space-between;*/
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   margin-left: 20%;
   margin-top: 10px;

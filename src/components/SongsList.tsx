@@ -10,7 +10,7 @@ type Props = {
 const SongsList: React.FC<Props> = ({ playSong }) => {
   const [activeSongIndex, setActiveSongIndex] = useState(-1);
 
-  const SetActive = (index: number) => {
+  const setActive = (index: number) => {
     setActiveSongIndex(index);
     playSong(index);
   };
@@ -19,7 +19,7 @@ const SongsList: React.FC<Props> = ({ playSong }) => {
     <div className="songs-name">
       <div className="popular-area">
         <h2 className="popular-heading">Popular</h2>
-        <button className="play" onClick={() => SetActive(0)}>
+        <button className="play" onClick={() => setActive(0)}>
           Play all
         </button>
       </div>
@@ -39,13 +39,13 @@ const SongsList: React.FC<Props> = ({ playSong }) => {
               className={
                 activeSongIndex === song.id - 1 ? "active-song" : "columns"
               }
-              onClick={() => SetActive(song.id - 1)}
+              onClick={() => setActive(song.id - 1)}
             >
               <td className="td-num">{song.id}</td>
               <td>
                 <img
                   src={song.image}
-                  style={{ width: "2rem", height: "2rem" }}
+                  className="songs-image"
                 />
               </td>
               <td>{song.title}</td>

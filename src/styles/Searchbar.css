@@ -12,7 +12,7 @@
 
 .searchbar input[type="text"] {
   width: 95%;
-  outline: none !important;
+  outline: none;
   border: 0;
   background: transparent;
   color: #bfbfbf;
