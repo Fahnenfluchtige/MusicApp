@@ -1,0 +1,84 @@
+
+.durationbar {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 99%;
+    justify-content: center;
+    padding-bottom: 1%;
+    
+  }
+  
+  .duration {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 90%;
+    margin: 1%;
+    height:8px;
+  }
+  
+  .duration::-webkit-slider-runnable-track {
+    width: 100%;
+    -webkit-appearance: none;
+    position: relative;
+    height: 8px;
+    background-color: #404040;
+    border-radius: 8px;
+  }
+  
+  .duration::-moz-range-track {
+    position: relative;
+    height: 8px;
+    background-color: #404040;
+    border-radius: 8px;
+  }
+  
+  .duration::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    appearance: none;
+    background: #ff8202;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+  }
+  
+  .duration::-moz-range-thumb {
+    border: none;
+    max-width: 15px;
+    max-height: 15px;
+    appearance: none;
+    background-color: #ff8202;
+    border-radius: 100%;
+  }
+  
+  .duration::-moz-range-progress {
+    height: 8px;
+    background-color: #ff8202;
+    border-radius: 8px;
+  }
+  
+  .duration::-webkit-progress-value {
+    
+    background-color: #ff8202;
+    
+    border-radius: 8px;
+  }
+  .duration::-webkit-progress-bar {
+    
+    background-color:  #ff8202;
+    border-radius: 8px;
+  }
+  
+  .time {
+    display:flex;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+
+  

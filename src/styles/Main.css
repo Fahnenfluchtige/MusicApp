@@ -1,0 +1,110 @@
+.album-container {
+  position: relative;
+  padding: 15px;
+}
+
+.album-picture {
+  background-image: url("https://post-punk.com/wp-content/uploads/2023/08/Death-Cult-official-Publicity-Photo063crop.jpg");
+  width: 99%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+.album-picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.album-picture::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 0 30px 30px 0;
+  background: linear-gradient(to left, rgba(0, 0, 0.7, 0.9), transparent);
+}
+
+.info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.statistics {
+  flex-direction: column;
+  align-self: flex-end;
+  bottom: 0;
+}
+
+.about {
+  width: 20%;
+  padding: 35px;
+  max-height: 15rem;
+  align-self: flex-end;
+  z-index: 1;
+}
+
+.about-text {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 15rem;
+}
+
+.about-text-mini {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 160%;
+}
+
+.verified-div {
+  display: flex;
+}
+.verified-style {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.verified-icon {
+  color: #ff8202;
+  margin-right: 3px;
+}
+
+.artist-name {
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.listeners {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}

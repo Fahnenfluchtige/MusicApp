@@ -1,0 +1,116 @@
+
+.songs-name {
+  color: #808080;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 20px;
+}
+
+.table-style {
+  border-collapse: collapse;
+  border-radius: 1px;
+  width: 100%;
+  border-radius: 30%;
+}
+
+.popular-area {
+  display: flex;
+  align-items: center; 
+}
+
+.popular-heading {
+  color: #fff;
+  font-style: inherit;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 1%;
+}
+
+.play {
+  border-radius: 8px;
+  background: #ff8202;
+  outline: none;
+  border: 0;
+  height: 25px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.play {
+  color: #000;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.tr-style {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 40px;
+}
+
+tr.tr-style th:nth-child(1) {
+  width: 20px;
+  text-align: center;
+}
+
+.td-num {
+    text-align: center;
+}
+
+tr.tr-style th:nth-child(2) {
+  width: 30px;
+  text-align: left;
+}
+
+tr.tr-style th:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+tr.tr-style th:nth-child(4) {
+  width: 100px;
+  text-align: left;
+}
+
+.columns {
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.columns:hover {
+  background: #1a1a1a;
+  border-radius: 30%;
+}
+
+.active-song {
+  height: 50px;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.songs-image {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.spacer {
+  height: 150px; 
+}

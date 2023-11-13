@@ -1,0 +1,30 @@
+.searchbar {
+  width: 50%;
+  height: 50px;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: #1a1a1a;
+  text-align: center;
+  /*margin-right: 45%;*/
+  align-content: space-between;
+  display: flex;
+}
+
+.searchbar input[type="text"] {
+  width: 95%;
+  outline: none;
+  border: 0;
+  background: transparent;
+  color: #bfbfbf;
+  font-family: Montserrat;
+  font-size: 12px;
+  margin-left: 2%;
+}
+
+.search-icon {
+  color: #bfbfbf;
+  width: 15px;
+  height: 15px;
+  margin-top: 18px;
+  margin-right: 18px;
+}
